@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.title-header-responsive{
+    display: none;
+}
+
+@media(max-width: 500px){
+    .title-header{
+        display: none;
+    }
+
+    .title-header-responsive{
+        display: block;
+    }
+ }

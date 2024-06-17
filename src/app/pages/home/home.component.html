@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title><h1>Currency converter</h1></mat-card-title>
+      <mat-card-subtitle> Get Creative: Customize Your Conversion!</mat-card-subtitle>
+    </mat-card-header>
+
+
+    <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+      <mdb-carousel-item>
+        <img src="../../../assets/1.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img src="../../../assets/2.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </mdb-carousel-item>
+      <mdb-carousel-item>
+        <img src="../../../assets/3.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+      </mdb-carousel-item>
+    </mdb-carousel>
+  <br>
+    <hr class="hr hr-blurry" />
+  <br>
+    <mat-card-content>
+      <p>
+        In order to use this currency conversion calculator, you must select the source currency, the target currency and the amount you want to convert.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="button" routerLink="/currency-converter" class="btn btn-info"  mdbRipple>CONVERTER</button>
+      <button type="button" routerLink="/currencies" class="btn btn-info"  mdbRipple>CURRENCIES</button>
+    </mat-card-actions>
+</mat-card>

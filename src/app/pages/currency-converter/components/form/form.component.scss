@@ -1,0 +1,46 @@
+h2 {
+   text-align: center;
+}
+
+mat-icon {
+   cursor: pointer;
+}
+
+.form-container {
+   width: 100%;
+   margin: 0 auto 2em;
+   display: flex;
+   justify-content: center;
+}
+
+.form-content-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 24px;
+   gap: 16px;
+   background-color: #faf6f6;
+}
+
+.form-select {
+   display: flex;
+   align-items: center;
+   gap: 50px;
+}
+
+@media(max-width: 650px){
+
+   .form-content-container {
+      width: 100%;
+   }
+
+   .form-select {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   mat-form-field {
+      width: 100%;
+   }
+}
