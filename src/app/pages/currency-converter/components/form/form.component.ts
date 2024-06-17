@@ -9,23 +9,27 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Converter } from '../../../../shared/interfaces/converter.model';
 import { CurrencyConverterService } from '../../../../shared/services/currency-converter.service';
 import { Currency } from '../../../../shared/interfaces/currency.model';
+import {MdbRippleModule} from "mdb-angular-ui-kit/ripple";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-form',
   standalone: true,
   imports: [
-    MatFormFieldModule, 
-    MatIconModule, 
-    MatButtonModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MdbRippleModule,
+    RouterLink,
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
-  
+
   currencyConverterSerice = inject(CurrencyConverterService);
   currencies!: Currency[];
   form!: FormGroup;
@@ -36,9 +40,9 @@ export class FormComponent {
     this.form = new FormGroup({
       from: new FormControl<string>('', {validators: Validators.required}),
       to: new FormControl<string>('', {validators: Validators.required}),
-      amount: new FormControl<number>(1, {validators: Validators.required}), 
+      amount: new FormControl<number>(1, {validators: Validators.required}),
     });
-    
+
     this.getCurrencies();
   }
 
@@ -47,17 +51,17 @@ export class FormComponent {
       this.currencies = currencies;
     })
   }
-  
+
   onSubmit() {
     const {status, value} = this.form;
-    
+
     if(status === 'VALID'){
       const convert: Converter = {
         fromCurrency: value.from,
         toCurrency: value.to,
         value: value.amount,
       } as Converter;
-      
+
       this.convert.emit(convert);
 
     }else {

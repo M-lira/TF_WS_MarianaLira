@@ -7,21 +7,21 @@
                 matInput
                 type="number"
                 formControlName="amount"
-                placeholder="Digite um valor para ser convertido"
+                placeholder="Type a value to convert."
             >
         </mat-form-field>
 
         <div class="form-select">
 
             <mat-form-field>
-                <mat-label>Original currency</mat-label>
+                <mat-label>Source currency</mat-label>
                 <mat-select formControlName="from">
                     @for (item of currencies; track $index) {
                         <mat-option [value]="item.code">{{item.description}}</mat-option>
                     }
                 </mat-select>
                 @if (form.controls['from'].hasError('required')) {
-                    <mat-error>Campo Obrigatório.</mat-error>
+                    <mat-error>Required field.</mat-error>
                 }
             </mat-form-field>
 
@@ -40,6 +40,6 @@
             </mat-form-field>
 
         </div>
-        <button type="submit" mat-raised-button color="warn">Calculate</button>
+        <button type="submit" class="btn btn-info" mdbRipple>Calculate</button>
     </div>
 </form>

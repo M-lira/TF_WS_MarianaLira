@@ -1,18 +1,18 @@
 <mat-form-field>
     <mat-label>Type something...</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. BRL" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. EUR" #input>
 </mat-form-field>
 
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
 
-      <!-- Código Column -->
+      <!-- Code Column -->
       <ng-container matColumnDef="code">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
         <td mat-cell *matCellDef="let row"> {{row.code}} </td>
       </ng-container>
 
-      <!-- Descrição Column -->
+      <!-- Description Column -->
       <ng-container matColumnDef="description">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
         <td mat-cell *matCellDef="let row"> {{row.description}} </td>
