@@ -1,6 +1,6 @@
 <mat-form-field>
     <mat-label>Type something...</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. BRL" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. EUR" #input>
 </mat-form-field>
 
 <div class="mat-elevation-z8">
@@ -76,7 +76,7 @@
     </table>
 
     <mat-paginator
-        [pageSizeOptions]="[5, 10, 25, 100]"
+        [pageSizeOptions]="[25]"
         aria-label="Select page of users">
     </mat-paginator>
 </div>

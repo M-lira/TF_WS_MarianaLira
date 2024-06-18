@@ -1,17 +1,32 @@
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-.title-header-responsive{
-    display: none;
+.title-header {
+  font-size: 1em; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  font-family: 'Arial', sans-serif; /* Choose a distinctive font family */
+  color: #FFFFFF; /* Change the text color */
+  padding: 0.2em 0.5em; /* Add some padding */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.title-header-responsive {
+  display: none;
+  font-size: 0.3em; /* smaller screens */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF;
+  padding: 0.2em 0.5em;
+  border-radius: 10px; /* Add rounded corners */
 }
 
 @media(max-width: 500px){
-    .title-header{
-        display: none;
-    }
+  .title-header {
+    display: none;
+  }
 
-    .title-header-responsive{
-        display: block;
-    }
- }
+  .title-header-responsive {
+    display: block;
+  }
+}

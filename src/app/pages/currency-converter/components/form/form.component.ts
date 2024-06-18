@@ -77,7 +77,7 @@ export class FormComponent {
   }
 
   private showErrorMsg(): void {
-    this.snackBar.open('Verifique os erros encontrados.', 'Ok',{
+    this.snackBar.open('Please review the errors.', 'Ok',{
       duration: 5000,
       verticalPosition: 'top'
     });

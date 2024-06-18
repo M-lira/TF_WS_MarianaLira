@@ -12,7 +12,7 @@ import { CurrencyConverterService } from '../../../../shared/services/currency-c
   standalone: true,
   imports: [
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,

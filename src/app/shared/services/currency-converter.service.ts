@@ -54,7 +54,8 @@ export class CurrencyConverterService {
   private convert(currencyConversionRate: CurrencyConversionRate, converter: Converter): void {
     const exchangeRate = currencyConversionRate.conversion_rates[converter.toCurrency];
     const totalExchangeRate = (converter.value * Number(exchangeRate));
-    const result = `${converter.value} em ${converter.fromCurrency} equivale a ${totalExchangeRate.toFixed(4)} em ${converter.toCurrency}`
+    const result = `${converter.value} ${converter.fromCurrency} is equivalent to ${totalExchangeRate.toFixed(4)} ${converter.toCurrency}`
+
 
     this.resultSubject.next(result);
 
@@ -76,8 +77,8 @@ export class CurrencyConverterService {
   private addConverter(exchangeRate: number, totalExchangeRate: number, converter: Converter): void {
     const c: Converter = {
         id: this.generateId(),
-        dateConverter: new Date().toLocaleDateString("pt-BR"),
-        timeConverter: new Date().toLocaleTimeString("pt-BR"),
+        dateConverter: new Date().toLocaleDateString("pt-PT"),
+        timeConverter: new Date().toLocaleTimeString("pt-PT"),
         value: converter.value,
         fromCurrency: converter.fromCurrency,
         toCurrency: converter.toCurrency,

@@ -4,16 +4,58 @@ img {
 }
 
 mat-card {
-    margin-bottom: 5em;
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.mat-card .p{
-  align-content: center;
+mat-card-header {
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #ff9100;
+  margin: 0.5em 0;
+}
+
+mat-card-title h1 {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+}
+
+mat-card-subtitle {
+  font-size: 1.5em; /* Adjust the subtitle size */
+  font-style: italic; /* Make the subtitle italic */
+  color: #555; /* Change the subtitle color */
+  margin-bottom: 1em;
+}
+
+mat-card-content {
+  text-align: center;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  font-weight: bold;
+}
+
+mat-card-content p {
+  font-weight: bold; /* Make the paragraph text bold */
+}
+
+.button {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 19%;
 }
 
-.button{
-  align-items: center;
-  display: flex;}
+
 

@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-confirmation-dialog',
   template: `
-    <h2 mat-dialog-title>Deletar item do histórico de conversões</h2>
+    <h2 mat-dialog-title>Delete conversion history item</h2>
     <mat-dialog-content>
-      Tem certeza que deseja deletar esse item?
+      Are you sure you want to delete this item?
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-      <button mat-button (click)="onConfirm()">Não</button>
-      <button mat-raised-button color="warn" (click)="onNotConfirm()" cdkFocusInitial>Sim</button>
+      <button mat-button (click)="onConfirm()">No</button>
+      <button mat-raised-button color="warn" (click)="onNotConfirm()" cdkFocusInitial>Yes</button>
     </mat-dialog-actions>
   `,
   standalone: true,

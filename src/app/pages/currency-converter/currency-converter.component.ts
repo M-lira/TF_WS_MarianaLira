@@ -13,7 +13,7 @@ import { BackToHomeComponent } from '../../shared/components/back-to-home/back-t
   styleUrl: './currency-converter.component.scss'
 })
 export class CurrencyConverterComponent {
-  result: string = 'Waiting for the results...';
+  result: string = 'Your results are being prepared, please wait...';
 
   currencyConverterService = inject(CurrencyConverterService);
 
