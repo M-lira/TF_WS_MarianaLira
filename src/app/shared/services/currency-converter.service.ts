@@ -6,7 +6,6 @@ import { Converter } from '../interfaces/converter.model';
 import { environment } from '../environments/environment';
 import { SupportedCurrencies } from '../interfaces/ supported-currencies.model';
 import { Currency } from '../interfaces/currency.model';
-import { LocalStorageService } from './local-storage.service';
 
 
 @Injectable({
@@ -25,8 +24,6 @@ export class CurrencyConverterService {
 
   private resultSubject = new BehaviorSubject<string>('');
   private result$: Observable<string> = this.resultSubject.asObservable();
-
-  private localStorageService = inject(LocalStorageService);
 
   getSupportedCodes(): Observable<Currency[]> {
     if(this.currencies.length === 0){
@@ -47,10 +44,6 @@ export class CurrencyConverterService {
     return this.result$;
   }
 
-  getAllConverter(): Converter[] {
-    return this.localStorageService.getAllConverter();
-  }
-
   private convert(currencyConversionRate: CurrencyConversionRate, converter: Converter): void {
     const exchangeRate = currencyConversionRate.conversion_rates[converter.toCurrency];
     const totalExchangeRate = (converter.value * Number(exchangeRate));
@@ -58,8 +51,6 @@ export class CurrencyConverterService {
 
 
     this.resultSubject.next(result);
-
-    this.addConverter(Number(exchangeRate),Number(totalExchangeRate.toFixed(4)), converter);
   }
 
   private convertToCurrency(supportedCurrencies: SupportedCurrencies): void {
@@ -72,21 +63,6 @@ export class CurrencyConverterService {
     })
 
     this.currenciesSubject.next(this.currencies);
-  }
-
-  private addConverter(exchangeRate: number, totalExchangeRate: number, converter: Converter): void {
-    const c: Converter = {
-        id: this.generateId(),
-        dateConverter: new Date().toLocaleDateString("pt-PT"),
-        timeConverter: new Date().toLocaleTimeString("pt-PT"),
-        value: converter.value,
-        fromCurrency: converter.fromCurrency,
-        toCurrency: converter.toCurrency,
-        amount: totalExchangeRate,
-        rate: exchangeRate
-    }
-
-    this.localStorageService.addConverter('list-converter', c);
   }
 
   private generateId(): string {
